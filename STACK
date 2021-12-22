@@ -1,0 +1,157 @@
+#include<stdio.h>
+int i,no;
+int arr[10],top=-1;
+int l2;
+int n;
+void insert()
+{ 
+ 
+	if(top==n-1)
+	{
+		printf("\n stack is full");
+	}
+
+	else
+	{ printf("\n inserted element is %d",no);
+		top=top+1;
+		arr[top]=no;
+	}
+	
+	
+	
+}
+void del()
+{  
+	if(top==-1)
+	{
+		printf("\n stack is empty");
+	}
+	
+	else 
+	{
+	  printf("\n deleted element is %d",arr[top]);
+		
+		top=top-1;
+	}
+	
+	
+	
+}
+
+void peek()
+{
+ if(top==-1)
+	{
+		printf("\n stack is empty");
+	}
+
+else
+{ 
+
+	  printf("\n the prevoius  element is %d",arr[top]);
+	
+	}	
+	
+}
+
+void empty()
+{
+	if(top==-1)
+	{
+		printf("\n stack is empty");
+	}
+	else
+	{
+		printf("\n stack is not empty");
+	}
+	
+	
+}
+
+void full()
+{
+		if(top==n-1)
+	    {    
+		printf("\n stack is full");
+	     }
+	     else
+	     printf("\n stack is not empty");
+}
+
+void display()
+{ 
+	if(top==-1)
+	{
+		printf("\n stack is empty nothing to display");
+	}
+	else
+	{ 
+		for(i=0;i<=top;i++)
+		{ 
+			printf("\n elements are %d",arr[i]);
+		}
+		
+	}
+}
+
+
+
+
+void main()
+{  
+	printf("enter the limit of the array");
+	scanf("%d",&n);
+	int ch;
+	char ans;
+	do
+	{
+	
+	printf("\n **********MENU***************");
+	printf("\n 1.PUSH ELEMENTS INTO THE STACK");
+	printf("\n 2.POP THE ELEMENTS OUT OF THE STACK");
+	printf("\n 3.PEEK ");
+	printf("\n 4.CHECK IS STACK IS EMPTY");
+	printf("\n 5.CHECK IS STACK IS FULL");
+	printf("\n 6.DISPLAY THE ELEMENTS OF THE STACK");
+	
+	printf("\n ENTER THE CHOICE");
+	scanf("%d",&ch);
+	
+	if(ch==1)
+	{
+	printf("\n enter the element to be inserted");
+	scanf("%d",&no);
+	insert();	
+	}
+	else if (ch==2)
+	{
+		del();
+	}
+	else if(ch==3)
+	{
+		peek();	
+	
+	}
+	else if(ch==4)
+	{
+		empty();	
+	
+	}
+	else if(ch==5)
+	{
+		full();	
+	  
+	
+	}
+	
+	else if(ch==6)
+	{
+		display();
+	}
+	printf("\n do u wish to continue");
+	scanf(" %c",&ans);
+	
+	
+}while(ans=='y'||ans=='Y');
+	
+}
